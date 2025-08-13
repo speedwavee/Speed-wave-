@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speed Wave | نمونه‌کار</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #e63946, #ff4d6d);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      background-color: #ff4d6d;
+      padding: 0.8rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe5ec;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeIn 1s ease;
+    }
+
+    .skills, .samples {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #fff0f3;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background-color: #ff4d6d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* انیمیشن‌ها */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Speed Wave</h1>
+    <p>طراح خلاق و سازنده تجربه‌های دیجیتال</p>
+  </header>
+
+  <nav>
+    <a href="#skills">مهارت‌ها</a>
+    <a href="#samples">نمونه‌کار</a>
+    <a href="#projects">ثبت پروژه</a>
+    <a href="#contact">ارتباط با ما</a>
+  </nav>
+
+  <section id="skills">
+    <h2>مهارت‌ها</h2>
+    <div class="skills">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">C++</div>
+      <div class="card">Python</div>
+      <div class="card">Microsoft Word</div>
+    </div>
+  </section>
+
+  <section id="samples">
+    <h2>نمونه‌کار</h2>
+    <div class="samples">
+      <a href="project1.html" class="card" target="_blank">پروژه ۱ - وبسایت فروشگاهی</a>
+      <a href="project2.html" class="card" target="_blank">پروژه ۲ - اپلیکیشن مدیریت کارها</a>
+      <a href="project3.html" class="card" target="_blank">پروژه ۳ - وبسایت شخصی</a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>ثبت پروژه</h2>
+    <form id="projectForm">
+      <input type="text" name="name" placeholder="نام شما" required>
+      <input type="text" name="title" placeholder="عنوان پروژه" required>
+      <textarea name="details" placeholder="توضیحات پروژه" rows="4" required></textarea>
+      <button type="submit" style="background:#e63946;color:white;border:none;padding:10px 15px;border-radius:5px;cursor:pointer;">ثبت</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>ارتباط با ما</h2>
+    <p>برای ثبت پروژه یا سوالات، از فرم بالا استفاده کنید.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Speed Wave</p>
+  </footer>
+
+  <script>
+    document.getElementById('projectForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      console.log('پروژه جدید:', data);
+      alert('پروژه شما ثبت شد!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
